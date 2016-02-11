@@ -132,7 +132,10 @@ def numberDelimited(number, delimiter, nJump):
 
 def wordsToNum(numInWord):
 	"Accepts a number in word form and returns it in numerical form"
+
 	#input must be in lowercase, check em!
+	if( not(numInWord.islower()) ):
+		return "Input word form must be in lower case."
 
 	#output
 	total = 0
