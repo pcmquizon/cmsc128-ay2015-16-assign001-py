@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import sys
+import re
 
 def testNTW(start, end):
 	"Calls numToWords function from number start to number end"
@@ -180,3 +181,42 @@ def numberDelimited(number, delimiter, nJump):
 			r = r + inputNum[i]
 		i = i + 1
 	print r
+
+def wordsToNum(numInWord):
+	"docu"
+	#input must be in lowercase, check em!
+
+	#output
+	total = 0
+
+	#match input using this
+	pat = re.compile(r'(.+[ ]+million[ ]+)(.+[ ]+thousand[ ]+)(.+[ ]+hundred[ ]+.*)')
+	
+	#ones [million]
+	#if pat.match(numInWord).group(1) exists, match it with this
+	milPat = re.compile(r'(.+)([ ]+million[ ]+)')
+
+	#hundreds-tens-ones [thousand]
+	#if pat.match(numInWord).group(2) exists, match it with this
+	thouPat = re.compile(r'(.+)([ ]+thousand[ ]+)')
+
+	#hundreds-tens-ones
+	#if pat.match(numInWord).group(3) exists, match it with this
+	hunPat = re.compile(r'(.+)([ ]+hundred[ ]+)(.*)')
+	tenPat = re.compile(r'(.*)(-?)(.*)')
+
+	#m = pat.match(numInWord).group(1)
+	#th = pat.match(numInWord).group(2)
+	#h = pat.match(numInWord).group(3)
+	#t = tenPat.match( hunPat.group(3) ).group(1)
+	#o = tenPat.match( hunPat.group(3) ).group(3)
+
+	#see if it has millions(1) and/or thousands(2) and/or hundreds parts(3)
+	mainBlock = pat.search(numInWord)
+	
+	#in input, get millions, thousands, hundreds
+		#in thousands and one hundreds, get	hundreds
+			#if thousands, disregard 'thousand'
+
+			#in hundreds, get tens, ones
+
