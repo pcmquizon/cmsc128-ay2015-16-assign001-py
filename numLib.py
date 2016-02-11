@@ -163,3 +163,20 @@ def threePlaces(h, t, o):
 	elif(o>0):
 		onesNum(o)
 	return None
+
+def numberDelimited(number, delimiter, nJump):
+	"insert description here"
+	#checker
+	#print str(number)+" "+delimiter+" "+str(nJump)
+
+	inputNum = str(number)
+	r = ""
+	i=0
+	
+	while(i<len(inputNum):
+		if(i==len(inputNum)-nJump):
+			r = r + delimiter + inputNum[i]
+		else:
+			r = r + inputNum[i]
+		i = i + 1
+	print r
