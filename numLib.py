@@ -2,8 +2,19 @@
 
 import sys
 
+def testNTW(start, end):
+	"Calls numToWords function from number start to number end"
+	print ""
+	i = start
+	while(i<=end):
+		numToWords(i)
+		print ""
+		i = i+1
+
 def numToWords(number):
-	"Accepts  a  whole  number from  zero (0)  to  1  million (1000000 ;  without  commas for  example:  1,000,000 two) and #prints  on  screen number  in  word  form"
+	"Accepts  a  whole  number from  zero (0)  to  1  million \
+	 (1000000 ;  without  commas for  example:  1,000,000 two) and \
+	 prints  on  screen number  in  word  form"
 
 	million = (number%10000000)/1000000
 	hTH = (number%1000000)/100000
