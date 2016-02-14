@@ -110,6 +110,7 @@ def numberDelimited(number, delimiter, nJump):
 	 (2) single character delimiter to be used, \
 	 (3) number of jumps when the delimiter will appear (from rightmost digit)"
 
+	delimited = 0
 	inputNum = str(number)
 	r = ""
 	i=0
@@ -118,12 +119,14 @@ def numberDelimited(number, delimiter, nJump):
 		while(i<len(inputNum)):
 			if(i==len(inputNum)-nJump):
 				r = r + delimiter + inputNum[i]
+				delimited = 1
 			else:
 				r = r + inputNum[i]
 			i = i + 1
-		if(i==nJump-1):
-				r = delimiter + '0' + r
-		else:
+		if(i==nJump-1 and delimited==0):
+			r = delimiter + '0' + r
+			delimited = 1
+		elif(delimited==0):
 			r = '0' + r
 		i = i + 1
 	return r
