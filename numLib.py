@@ -114,11 +114,17 @@ def numberDelimited(number, delimiter, nJump):
 	r = ""
 	i=0
 
-	while(i<len(inputNum)):
-		if(i==len(inputNum)-nJump):
-			r = r + delimiter + inputNum[i]
+	while(i<nJump):
+		while(i<len(inputNum)):
+			if(i==len(inputNum)-nJump):
+				r = r + delimiter + inputNum[i]
+			else:
+				r = r + inputNum[i]
+			i = i + 1
+		if(i==nJump-1):
+				r = delimiter + '0' + r
 		else:
-			r = r + inputNum[i]
+			r = '0' + r
 		i = i + 1
 	return r
 
