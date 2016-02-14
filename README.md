@@ -15,6 +15,15 @@ import numLib
   ```
   numLib.numToWords(number)
   ```
+ The function call
+ ```
+ numLib.numToWords(1234)
+ ```
+ 
+ Prints
+ ```
+ one thousand two hundred thirty four
+ ```
 
 2. **numberDelimited**
   * <p>Accepts three arguments: 
@@ -38,6 +47,14 @@ import numLib
   ```
   numLib.wordsToNum(number)
   ```
+  The function call
+  ```
+  numLib.wordsToNum('one thousand two hundred thirty four')
+  ```
+ Returns
+ ```
+ 1234
+ ```
 
 4. **wordsToCurrency**
   * <p>Accepts two arguments:
@@ -52,4 +69,12 @@ otherwise, it returns number in to its numerical form with a prefix of the curre
   ######To call the function:
   ```
   numLib.wordsToNum(number, currency)
+  ```
+  The function call
+  ```
+  numLib.wordsToNum('one thousand two hundred thirty four',‘USD’)
+  ```
+  Returns
+  ```
+  USD1234
   ```
