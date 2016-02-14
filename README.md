@@ -8,15 +8,14 @@ import numLib
 
 #####It has the following functions: 
 
-1. **numToWords**
+**numToWords**
 <p>Accepts  a  whole  number from zero (0) to 1 million (1000000; without commas for example: 1,000,000) <br/>and prints on screen number in  word form</p>
 
 ######To call the function:
 ```
 numLib.numToWords(number)
 ```
-
-2. **numberDelimited**
+**numberDelimited**
 <p>Accepts three arguments: 
   <ul>
     <li>a  whole  number from zero (0) to 1 million (1000000; without commas for example: 1,000,000)
@@ -31,7 +30,7 @@ numLib.numToWords(number)
 numLib.numberDelimited(number,delimiter,jump)
 ```
 
-3. **wordsToNum**
+**wordsToNum**
 <p>Accepts a number in word form (lowercase) and returns it in numerical form</p>
 
 ######To call the function:
@@ -39,7 +38,7 @@ numLib.numberDelimited(number,delimiter,jump)
 numLib.wordsToNum(number)
 ```
 
-4. **wordsToCurrency**
+**wordsToCurrency**
 <p>Accepts two arguments:
   <ul>
     <li>a number from 0 to 1 million in word form
