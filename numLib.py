@@ -146,7 +146,7 @@ def wordsToNum(numInWord):
 	#hundreds-tens-ones
 	#if pat.match(numInWord).group(3) exists, match it with this
 	hunPat = re.compile(r'((.+)([ ]+hundred[ ]*))?(.*)')
-	tenPat = re.compile(r'(\w*)(-?)(\w*)')
+	tenPat = re.compile(r'(\w*)(\ *-?\ *)(\w*)')
 
 	#see if it has millions(1) and/or thousands(2) and/or hundreds parts(3)
 	mainBlock = pat.search(numInWord)
