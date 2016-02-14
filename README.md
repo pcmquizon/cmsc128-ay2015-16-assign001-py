@@ -39,6 +39,14 @@ import numLib
   ```
   numLib.numberDelimited(number,delimiter,jump)
   ```
+  The function call
+  ```
+  numLib.numberDelimited(1234,’,’,3)
+  ```
+  Returns
+  ```
+  1,234
+  ```
 
 3. **wordsToNum**
   * <p>Accepts a number in word form (lowercase) and returns it in numerical form</p>
@@ -68,11 +76,11 @@ otherwise, it returns number in to its numerical form with a prefix of the curre
 
   ######To call the function:
   ```
-  numLib.wordsToNum(number, currency)
+  numLib.wordsToCurrency(number, currency)
   ```
   The function call
   ```
-  numLib.wordsToNum('one thousand two hundred thirty four',‘USD’)
+  numLib.wordsToCurrency('one thousand two hundred thirty four',‘USD’)
   ```
   Returns
   ```
