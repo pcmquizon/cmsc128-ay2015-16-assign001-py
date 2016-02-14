@@ -19,7 +19,7 @@ def numToWords(number):
 	output=""
 
 	if(million>0):
-		output = output + onesNum(million) + " million "
+		output = output + getWordForm(million) + " million "
 
 	if(hTH>0 or tTH>0 or oTH>0):
 		output = output + threePlacesNTW(hTH, tTH, oTH) + " thousand "
@@ -29,87 +29,79 @@ def numToWords(number):
 	elif(o==0 and hTH==0 and tTH==0 and oTH==0 and million==0 and t==0 and h==0):
 		output = "zero"
 
-	return output	
+	print output	
 
-def onesNum(number):
-	"Evaluates the parameter number and prints the corresponding word form"
+def getWordForm(number):
+	"Evaluates the parameter number and returns the corresponding word form"
 	if(number==1):
 		return "one"
-	if(number==2):
+	elif(number==2):
 		return "two"
-	if(number==3):
+	elif(number==3):
 		return "three"
-	if(number==4):
+	elif(number==4):
 		return "four"
-	if(number==5):
+	elif(number==5):
 		return "five"
-	if(number==6):
+	elif(number==6):
 		return "six"
-	if(number==7):
+	elif(number==7):
 		return "seven"
-	if(number==8):
+	elif(number==8):
 		return "eight"
-	if(number==9):
+	elif(number==9):
 		return "nine"
-
-def tensNum(number):
-	"Evaluates the parameter number and prints the corresponding word form; \
-	 similar to onesNum() function"
-	if(number==10):
+	elif(number==10):
 		return "ten"
-	if(number==20):
+	elif(number==20):
 		return "twenty"
-	if(number==30):
+	elif(number==30):
 		return "thirty"
-	if(number==40):
+	elif(number==40):
 		return "forty"
-	if(number==50):
+	elif(number==50):
 		return "fifty"
-	if(number==60):
+	elif(number==60):
 		return "sixty"
-	if(number==70):
+	elif(number==70):
 		return "seventy"
-	if(number==80):
+	elif(number==80):
 		return "eighty"
-	if(number==90):
+	elif(number==90):
 		return "ninety"
-
-def lessThanTwenty(number):
-	"Evaluates the parameter number and prints the corresponding word form; \
-	 similar to onesNum() and lessThanTwenty() method"
-	if(number==11):
+	elif(number==11):
 		return "eleven "
-	if(number==12):
+	elif(number==12):
 		return "twelve "
-	if(number==13):
+	elif(number==13):
 		return "thirteen "
-	if(number==14):
+	elif(number==14):
 		return "fourteen "
-	if(number==15):
+	elif(number==15):
 		return "fifteen"
-	if(number==16):
+	elif(number==16):
 		return "sixteen"
-	if(number==17):
+	elif(number==17):
 		return "seventeen"
-	if(number==18):
+	elif(number==18):
 		return "eighteen"
-	if(number==19):
+	elif(number==19):
 		return "nineteen"
 
 def threePlacesNTW(h, t, o):
 	"Calls the appropriate functions based on the values of h, t and o"
 	output = ""
 	if(h>0):
-		output = output + onesNum(h) + " hundred "
+		output = output + getWordForm(h) + " hundred "
 
 	if(t==1 and (0 < o < 10) ):
-		output = output + lessThanTwenty(10+o)
+		output = output + getWordForm(10+o)
 	elif(t>1 and o>0):
-		output = output + tensNum(t*10) + "-" + onesNum(o)
+		output = output + getWordForm(t*10) + "-" + getWordForm(o)
 	elif(t>0):
-		output = output + tensNum((t*10)+o)
+		output = output + getWordForm((t*10)+o)
 	elif(o>0):
-		output = output + onesNum(o)
+		output = output + getWordForm(o)
 
 	return output
 
